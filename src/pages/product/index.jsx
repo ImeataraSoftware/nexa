@@ -94,105 +94,247 @@ const defaultColums = [
   {
     accessorKey: 'id',
     id: 'id',
-    header: 'Id',
+    header: ({ column }) => <>Id</>,
     cell: (row) => row.getValue(),
+    enableSorting: false,
+    enableHiding: false,
     size: 200,
   },
   {
     accessorKey: 'description',
     id: 'description',
-    header: 'Descripción',
+    header: ({ column }) => (
+      <>
+        Descripción
+        {
+          {
+            asc: <ArrowUpAz className="size-4" />,
+            desc: <ArrowDownAZ className="size-4" />,
+          }[column.getIsSorted() ?? null]
+        }
+      </>
+    ),
     cell: (row) => row.getValue(),
     size: 200,
   },
   {
     accessorKey: 'category',
     id: 'category',
-    header: 'Categoría',
+    header: ({ column }) => (
+      <>
+        Categoría{' '}
+        {
+          {
+            asc: <ArrowUpAz className="size-4" />,
+            desc: <ArrowDownAZ className="size-4" />,
+          }[column.getIsSorted() ?? null]
+        }
+      </>
+    ),
     cell: (row) => row.getValue(),
     size: 200,
   },
   {
     accessorKey: 'subcategory',
     id: 'subcategory',
-    header: 'Subcategoría',
+    header: ({ column }) => (
+      <>
+        Subcategoría{' '}
+        {
+          {
+            asc: <ArrowUpAz className="size-4" />,
+            desc: <ArrowDownAZ className="size-4" />,
+          }[column.getIsSorted() ?? null]
+        }
+      </>
+    ),
     cell: (row) => row.getValue(),
     size: 200,
   },
   {
     accessorKey: 'retailPrice',
     id: 'retailPrice',
-    header: 'Precio minorista',
+    header: ({ column }) => (
+      <>
+        Precio minorista{' '}
+        {
+          {
+            asc: <ArrowUpAz className="size-4" />,
+            desc: <ArrowDownAZ className="size-4" />,
+          }[column.getIsSorted() ?? null]
+        }
+      </>
+    ),
     cell: (row) => row.getValue(),
     size: 200,
   },
   {
     accessorKey: 'wholesalePrice',
     id: 'wholesalePrice',
-    header: 'Precio mayorista',
+    header: ({ column }) => (
+      <>
+        Precio mayorista{' '}
+        {
+          {
+            asc: <ArrowUpAz className="size-4" />,
+            desc: <ArrowDownAZ className="size-4" />,
+          }[column.getIsSorted() ?? null]
+        }
+      </>
+    ),
     cell: (row) => row.getValue(),
     size: 200,
   },
   {
     accessorKey: 'cost',
     id: 'cost',
-    header: 'Costo',
+    header: ({ column }) => (
+      <>
+        Costo{' '}
+        {
+          {
+            asc: <ArrowUpAz className="size-4" />,
+            desc: <ArrowDownAZ className="size-4" />,
+          }[column.getIsSorted() ?? null]
+        }
+      </>
+    ),
     cell: (row) => row.getValue(),
     size: 200,
   },
   {
     accessorKey: 'quantity',
     id: 'quantity',
-    header: 'Cantidad',
+    header: ({ column }) => (
+      <>
+        Cantidad{' '}
+        {
+          {
+            asc: <ArrowUpAz className="size-4" />,
+            desc: <ArrowDownAZ className="size-4" />,
+          }[column.getIsSorted() ?? null]
+        }
+      </>
+    ),
     cell: (row) => row.getValue(),
     size: 200,
   },
   {
     accessorKey: 'sku',
     id: 'sku',
-    header: 'SKU',
+    header: ({ column }) => (
+      <>
+        SKU{' '}
+        {
+          {
+            asc: <ArrowUpAz className="size-4" />,
+            desc: <ArrowDownAZ className="size-4" />,
+          }[column.getIsSorted() ?? null]
+        }
+      </>
+    ),
     cell: (row) => row.getValue(),
     size: 200,
   },
   {
     accessorKey: 'upc',
     id: 'upc',
-    header: 'UPC',
+    header: ({ column }) => (
+      <>
+        UPC{' '}
+        {
+          {
+            asc: <ArrowUpAz className="size-4" />,
+            desc: <ArrowDownAZ className="size-4" />,
+          }[column.getIsSorted() ?? null]
+        }
+      </>
+    ),
     cell: (row) => row.getValue(),
     size: 200,
   },
   {
     accessorKey: 'supplier',
     id: 'supplier',
-    header: 'Proveedor',
+    header: ({ column }) => (
+      <>
+        Proveedor{' '}
+        {
+          {
+            asc: <ArrowUpAz className="size-4" />,
+            desc: <ArrowDownAZ className="size-4" />,
+          }[column.getIsSorted() ?? null]
+        }
+      </>
+    ),
     cell: (row) => row.getValue(),
     size: 200,
   },
   {
     accessorKey: 'productStatus',
     id: 'productStatus',
-    header: 'Estado',
+    header: ({ column }) => (
+      <>
+        Estado{' '}
+        {
+          {
+            asc: <ArrowUpAz className="size-4" />,
+            desc: <ArrowDownAZ className="size-4" />,
+          }[column.getIsSorted() ?? null]
+        }
+      </>
+    ),
     cell: (row) => row.getValue(),
     size: 200,
   },
   {
     accessorKey: 'manufacturingDate',
     id: 'manufacturingDate',
-    header: 'Fabricación',
+    header: ({ column }) => (
+      <>
+        Fabricación{' '}
+        {
+          {
+            asc: <ArrowUpAz className="size-4" />,
+            desc: <ArrowDownAZ className="size-4" />,
+          }[column.getIsSorted() ?? null]
+        }
+      </>
+    ),
     cell: (row) => row.getValue(),
     size: 200,
   },
   {
     accessorKey: 'expirationDate',
     id: 'expirationDate',
-    header: 'Expiración',
+    header: ({ column }) => (
+      <>
+        Expiración{' '}
+        {
+          {
+            asc: <ArrowUpAz className="size-4" />,
+            desc: <ArrowDownAZ className="size-4" />,
+          }[column.getIsSorted() ?? null]
+        }
+      </>
+    ),
     cell: (row) => row.getValue(),
     size: 200,
   },
   {
     accessorKey: 'lastUpdateTime',
     id: 'lastUpdateTime',
-    header: 'Actualización',
+    header: ({ column }) => (
+      <>
+        Actualización{' '}
+        {
+          {
+            asc: <ArrowUpAz className="size-4" />,
+            desc: <ArrowDownAZ className="size-4" />,
+          }[column.getIsSorted() ?? null]
+        }
+      </>
+    ),
     cell: (row) => row.getValue(),
     size: 200,
   },
@@ -258,11 +400,11 @@ const index = () => {
               className="ml-auto hidden h-8 lg:flex"
             >
               <MixerHorizontalIcon className="mr-2 size-4" />
-              Tabla
+              Vista
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-40">
-            <DropdownMenuLabel>Tabla</DropdownMenuLabel>
+            <DropdownMenuLabel>Alternar columna</DropdownMenuLabel>
             <DropdownMenuSeparator />
             {table
               .getAllLeafColumns()
@@ -340,12 +482,6 @@ const index = () => {
                             header.column.columnDef.header,
                             header.getContext(),
                           )}
-                          {
-                            {
-                              asc: <ArrowUpAz className="size-4" />,
-                              desc: <ArrowDownAZ className="size-4" />,
-                            }[header.column.getIsSorted() ?? null]
-                          }
                         </div>
                       )}
                       <div
@@ -413,7 +549,17 @@ const index = () => {
           </tbody>
         </table>
       </div>
-      <div>footer</div>
+      <div className="text-sm font-medium text-muted-foreground">
+        <span>{`${table.getRowModel().rows.length} productos | `}</span>
+        {table.getSelectedRowModel().rows.length > 0 && (
+          <span>
+            {table.getSelectedRowModel().rows.length}{' '}
+            {table.getSelectedRowModel().rows.length === 1
+              ? 'seleccionado | '
+              : 'seleccionados | '}
+          </span>
+        )}
+      </div>
     </>
   )
 }

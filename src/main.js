@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, ipcMain } from 'electron'
 import path from 'path'
 import { Sequelize } from 'sequelize'
 
@@ -33,6 +33,18 @@ const createWindow = () => {
       path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`),
     )
   }
+
+  ipcMain.on('maximize', () => {
+    window
+  })
+
+  ipcMain.on('', () => {})
+
+  ipcMain.on('', () => {})
+
+  mainWindow.on('enter-full-screen', () => {
+    mainWindow.unmaximize()
+  })
 
   // Abrir las herramientas de desarrollo.
   if (
@@ -71,6 +83,7 @@ app
 
 // En este archivo puedes incluir el resto del código específico del proceso principal de tu aplicación
 // También puedes ponerlos en archivos separados e importarlos aquí.
+
 const sequelize = new Sequelize({
   dialect: 'sqlite',
   storage: 'src/database.sqlite',
